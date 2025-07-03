@@ -1,0 +1,108 @@
+* {
+  /* 기본선택자_아스트로(전체) */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* id */
+#registration-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* class */
+.form-group {
+  margin: 15px;
+}
+body {
+  /* Tag */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+}
+/* 속성선택자 */
+[type="text"] {
+  width: 100%;
+  border: 1px;
+  border-color: #000000;
+}
+[type="email"] {
+  width: 100%;
+  border: 1px;
+  border-color: #ccc;
+}
+[type="password"] {
+  width: 100%;
+  border: 1px;
+  border-color: #573b3b;
+}
+[type="submit"] {
+  background-color: rgb(12, 215, 148);
+  color: white;
+  padding: 10px 20px;
+  font-size: large;
+}
+[type="reset"] {
+  background-color: rgb(178, 215, 12);
+  color: white;
+  padding: 10px 20px;
+  font-size: large;
+}
+form p {
+  /* 후손선택자 */
+  padding: 5px;
+}
+form > p {
+  /* 자식선택자 */
+  padding: 0;
+}
+label {
+  /* 라벨정렬 */
+  display: inline-block;
+  width: 100px;
+}
+select {
+  /* 드롭다운메뉴에 너비와 테두리스탈적용 */
+  width: 50%;
+  outline-style: dotted;
+}
+main {
+  background-color: #ccc;
+  padding: 50px;
+}
+
+#container .container-btn:hover {
+  /* 마우스커서가 요소위에 있을때 */
+  cursor: pointer;
+  background-color: aquamarine;
+  font-size: 50px;
+}
+
+.contain:focus {
+  border-width: 5px;
+}
+.containers-item:hover {
+  border-color: aqua;
+  border-width: 5px;
+}
+
+form > label:first-child {
+  margin-top: 20px;
+}
+
+select option:first-child {
+  font-weight: bold;
+}
+h2::after {
+  content: "✨";
+  margin-left: 10px;
+}
+label.fil::after {
+  content: "*";
+  color: crimson;
+}
+.form-group::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #ddd;
+  margin-top: 10px;
+}

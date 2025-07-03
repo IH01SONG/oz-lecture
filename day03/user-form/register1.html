@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="uft-8" />
+    <title>User Ragistration</title>
+  </head>
+  <body>
+    <header>
+      <!-- 헤더 -->
+     
+      </svg>
+      <link rel="stylesheet" href="styles.css" />
+      <h1>User Ragistration</h1>
+      <!-- 페이지제목 -->
+      <nav>
+        <!-- 네비 -->
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Register</a></li>
+          <!-- 헤더링크 -->
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Registration Form</h2>
+        <!-- 메인 제목 -->
+        <form action="/submit" method="post" id="registration-form">
+          <!-- 폼시작 -->
+          <article>
+            <!-- 아티클1 -->
+
+            <label for="username" class="fil">
+              name </label>
+              <input type="text" id="username" name="name" placeholder="name"
+            >
+            <p class="form-group"></p>
+            <label for="useremail"class="fil">email </label>
+            <input
+              type="email"
+              id="useremail"
+              name="emial"
+              placeholder="exaple@domain.com"
+            />
+            <p class="form-group"></p>
+            <label for="userpassword"class="fil">password </label>
+            <input
+              type="password"
+              id="userpassword"
+              name="password"
+              placeholder="****"
+            />
+            <p class="form-group"></p>
+            <label for="userbirthdate"class="fil">birthdate </label>
+            <input type="date" id="userbirthdate" name="birthdate" />
+            <p class="form-group"></p>
+            <label for="userage">age :</label>
+            <input type="number" id="userage" name="age" min="0" max="100" />
+            <p class="form-group"></p>
+
+            <span class="fil">gender :</span>
+            <label for="gender-male">
+              <input type="radio" name="gender" value="male" id="gender-male" />
+              male</label
+            >
+            <label for="gender-famale">
+              <input
+                type="radio"
+                name="gender"
+                value="famale"
+                id="gender-famale"
+              />
+              famale</label
+            >
+            <label for="gender-other">
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                id="gender-other"
+              />
+              other</label
+            >
+            <p class="form-group"></p>
+          </article>
+
+          <article>
+            <!-- 아티클2 -->
+            <h2>satisfaction survey</h2>
+            <p class="form-group"></p>
+            <label for="satisfaction">satisfaction :</label>
+            <input type="range" name="satisfaction" min="0" max="100" />
+            <p class="form-group"></p>
+
+            country :
+            <select name="country" multiple class="containers-item">
+              <option value="kr">South Korea</option>
+              <option value="USA">USA</option>
+              <option value="Japan">Japan</option>
+              <option value="China">China</option>
+              <option value="UK">UK</option>
+            </select>
+            <p class="form-group"></p>
+
+            hobby :
+            <label>
+              <input
+                type="checkbox"
+                id="hobby-coding"
+                name="hobby"
+                value="coding"
+              />coding
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="hobby-surfing"
+                name="hobby"
+                value="surfing"
+              />surfing
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="hobby-reading"
+                name="hobby"
+                value="reading"
+              />reading
+            </label>
+          </article>
+          <p class="form-group"></p>
+          <div id="container">
+            <h2>Registration Completed</h2>
+            <!-- 아티클3 -->
+            <p class="form-group"></p>
+            
+            <button type="submit" class="container-btn">제출</button>
+            <input type="reset" name="초기화" class="contain"/>
+          </div>
+        </form>
+      </section>
+
+      <aside>
+        <!-- 어사이드 -->
+      
+      </aside>
+    </main>
+
+    <footer>
+      <!-- 푸터=주소+저작권 -->
+      <address><a href="#">sample@domain.com</a></address>
+      <p class="form-group">&copy; all light reserved</p>
+    </footer>
+  </body>
+</html>

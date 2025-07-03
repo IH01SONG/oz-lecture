@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UFT-8">
+        <title>User Registration Form</title>
+        <!-- 유저 등록 폼 -->
+     </head>
+    <body>
+        <header> <img src="User-Ragistratin.png"> </header>
+        <!-- 이미지삽입 -->
+        <main>
+         <form action="/submit" method="POST">
+            <!-- 입력 요소들이 여기 포함_POST대신GET하면 주소창에 뭔가바뀜 -->
+            <section><h2>Registration Form</h2>
+                <!-- 섹션과 제목 -->
+                 <ul>
+                    <li>아이디</li><input type="text" name="username" placeholder="사용자 이름"><br>
+                
+                <li>e-mail</li><input type="email" name="email" placeholder="samlple@domain.com"><br>
+                <li>비밀번호</li><input type="password" name="password" placeholder="비밀번호"><br>
+               <li>생년월일</li> <input type="date" name="birthdate" placeholder="생년월일"><br>
+                <li>나이</li><input type="number" name="age"  min="0" max="100" placeholder="나이"><br>
+            
+            </ul>
+            </section>
+            <article>
+                <!-- 아티클 -->
+                <h3>서비스만족도</h3>
+                <input type="range" name="satisfaction"  min="0" max="100" placeholder="서비스 만족도">
+            <h3>성별을 선택해주세요</h3>
+            <input type="radio" name="gender" value="male" > 남성
+            <input type="radio" name="gender" value="famale" > 여성<br><hr>
+            <P>Why Register? Registering allows you to access exclusive features</P></article>
+            <!-- 아티클 설명 -->
+            <hr><div>
+                <h3>관심사를 선택해주세요(중복선택가능)</h3>
+                <!-- 인풋 라벨링 -->
+                <input id=gaming type="checkbox" name="interests" value="gaming" > 
+                <label for="gaming">게임</label>
+                <input id=reading type="checkbox" name="interests" value="reading" > 
+                <label for="reading">독서</label>
+                <input id=shopping type="checkbox" name="interests" value="shopping" > 
+                <label for="shopping">쇼핑</label>
+                <input id=surfing type="checkbox" name="interests" value="surfing" > 
+                <label for="surfing">서핑</label>
+                <input id=Drawing type="checkbox" name="interests" value="Drawing" > 
+                <label for="Drawing">드로잉</label>
+            </div>
+            <div>
+                <h3>국가를 선택해주세요</h3>
+                <select name="nation">
+                    <!-- 셀렉션 -->
+                    <option value="South Korea">한국</option>
+                    <option value="the United States">미국</option>
+                    <option value="Japan">일본</option>
+                    <option value="Australia">호주</option>
+                    <option value="Mexico">멕시코</option>
+                    <option value="France">프랑스</option>
+                    <!-- 멀티플 컨트롤(커맨드)로 다중선택 가능 -->
+                </select>
+                <select name="nation" multiple>
+                    <!-- 셀렉션 멀티플버젼 -->
+                    <option value="South Korea">한국</option>
+                    <option value="the United States">미국</option>
+                    <option value="Japan">일본</option>
+                    <option value="Australia">호주</option>
+                    <option value="Mexico">멕시코</option>
+                    <option value="France">프랑스</option>
+                </select>
+            </div><br>
+            <button type="submit">제출</button>
+            <input type="reset" name="초기화">
+            </form>            
+            
+        </main>
+            <footer>
+                <p>마감 두시간 전 집중 안될때 듣기 좋은 팝송 플리</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UvnWSXuYDus?si=ap9kpPxKmhpyRdae" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+                <audio controls>
+                <source src="sample.mp3" type="audio/mp3">
+                <source src="sample.wav" type="audio/wav">                
+            </audio>
+                <p> &copy; 2025. all light reserved</p>
+            </footer>
+            <aside>
+                <p> Drawing </p>
+                <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="blue" />
+                </svg>
+                <canvas id="canvas" width="300" height="300" >
+                    <!-- 원하는 도형을 그리세요 -->
+                </canvas>
+            </aside>
+        </body>       
+</html>

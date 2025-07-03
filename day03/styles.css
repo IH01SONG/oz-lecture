@@ -1,0 +1,49 @@
+h3 {
+    color: blueviolet;
+}
+p {
+    color: rgb(148, 5, 22);
+}
+
+#main-title{
+    /* # = id */
+    font-size: 60px;
+    color: green;
+}
+header ul {
+    /* 후손은 띄어쓰기 */
+    background-color: blanchedalmond;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.link{
+    /* . = class */
+    font-weight: bold;
+}
+.link > a {
+    /* 링크속 앵커태그 a 에만 적용되는 스타일을 위해 > 자식선택자 */
+    text-decoration: underline;
+}
+div{
+    /* 태그에는 표시없이 태그명 */
+    font-size: 40px;
+}
+*{
+    /* * = all */
+    margin: 3px;
+    /* 요소의 외부 여백 */
+    padding: 1;
+    /* 요소의 내부 여백 */
+}
+
+#container {
+    background-color: aliceblue;
+}
+#container .container-btn:hover {
+    /* 마우스커서가 요소위에 있을때 */
+    cursor: pointer;
+    background-color: aquamarine;
+    font-size: 50px;
+}

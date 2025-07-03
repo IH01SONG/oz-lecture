@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UFT-8">
+        <title>연습</title>
+    </head>
+    <body>
+        <header>
+            <h1>회원가입</h1>
+        </header>
+        <main><form action="/submit" method="POST">
+            <ul><!-- 입력 요소들이 여기 포함_POST대신GET하면 주소창에 뭔가바뀜 -->
+                <li>아이디</li>
+                <input type="text" name="username" placeholder="사용자 이름">
+                <br>
+                <li>비밀번호</li>
+                <input type="password" name="password" placeholder="비밀번호">
+                <br>   
+                <li>전화번호</li>
+                <input type="number" name="tel" placeholder="전화번호">
+        </ul></form>
+        <span>
+         <button type="submit">제출</button>
+            <input type="reset" name="초기화">
+            <!-- input/button -->
+             </span>
+        </main>
+        <footer>
+            <div id="study">
+                <p class="text content">html 공부중이에요</p> 
+                <p>저는 <span title="재미있게">공부</span> 하는 중이에요</p>
+                <!-- id는 1개 / text는 여러개 가질 수 있음 -->
+                 <img
+                 src="User-Form/User-Ragistratin.png"
+                 alt="logo">
+                 <!-- 잘못된 경로일때 alt로 이미지설명가능 -->
+            </div>
+        </footer>
+    </body>    
+</html>
