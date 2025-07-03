@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0.1rem;
+  padding: 0.1rem;
+  align-content: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  max-width: 80vw;
+  text-align: center;
+  font-size: 1rem;
+}
+h1 {
+  padding: 1rem;
+}
+header {
+  padding: 2rem;
+  border-bottom: 0.2rem solid cornflowerblue;
+  margin-top: 1rem;
+  /* 상단여백이 마진탑맞는감 */
+}
+nav ul {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-around;
+}
+/* nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  display: inline-block; */
+
+nav ul li {
+  text-decoration: none;
+  color: cornflowerblue;
+  /* align-items: center; */
+}
+#posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.post {
+  padding: 1.5rem;
+  border: 0.2rem solid gray;
+}
+aside {
+  width: 25vw;
+  padding: 1.5rem;
+  margin-right: 2vw;
+}
+footer {
+  padding: 1.5rem;
+  border-top: 0.2rem solid cornflowerblue;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+footer a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+section {
+  margin: 2vw;
+}
+aside {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+@media (max-width: 1023px) {
+  body {
+    max-width: 90vw;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  aside {
+    margin: 0.5rem;
+    width: 30vw;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  #posts {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+  aside {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
