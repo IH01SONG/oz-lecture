@@ -32,11 +32,11 @@ section {
   margin: 1vw 2vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 article {
   max-width: 100%;
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   border-color: antiquewhite;
 }
@@ -45,6 +45,8 @@ article {
   border-color: antiquewhite;
 }
 a {
+  margin: auto;
+  /* 중앙정렬! */
   display: inline-block;
   border: 0.2rem solid antiquewhite;
   border-radius: 5px;
@@ -56,7 +58,7 @@ a {
   color: darkgreen;
 }
 a:hover {
-  background-color: rgb(146, 160, 95);
+  background-color: rgb(244, 248, 229);
 }
 @media (max-width: 767px) {
   body {
@@ -70,5 +72,8 @@ a:hover {
     gap: 0.5rem;
     align-items: center;
     justify-content: space-around;
+  }
+  a {
+    padding: 2rem 6rem;
   }
 }
