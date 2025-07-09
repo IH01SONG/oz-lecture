@@ -10,7 +10,7 @@ let grade;
 
 // 최종점수 계산(5점추가)
 if (isNaN(input) || input < 0 || input > MAX_SCORE) {
-  console.log("잘못된 점수 입력입니다. 0~100 사이의 숫자를 입력해주세요.");
+  console.log("Invalid score! Please enter a number between 0 and 100.");
 } else input >= 0 || input <= MAX_SCORE;
 {
   let finalScore = input + 5; // 이항 산술 연산자
@@ -25,7 +25,7 @@ if (isNaN(input) || input < 0 || input > MAX_SCORE) {
 // - F: 60 미만
 let finalScore = input + 5;
 
-if (finalScore >= 100) {
+if (finalScore > 100) {
   grade = "S";
 } else if (finalScore >= 90 && finalScore < 100) {
   grade = "A";
@@ -35,6 +35,8 @@ if (finalScore >= 100) {
   grade = "C";
 } else if (finalScore >= 60 && finalScore < 70) {
   grade = "D";
+} else if ((finalScore = 100)) {
+  grade = "O"; // 정확히 100 점수
 } else {
   grade = "F";
 }
@@ -70,6 +72,9 @@ switch (grade) {
     break;
   case "F":
     message = "Please try harder!";
+    break;
+  case "O":
+    message = "Perfect Score!"; //정확히 100점수에 메세지
     break;
 
   default:
