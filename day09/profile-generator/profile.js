@@ -62,3 +62,17 @@ console.log(typeof hobbies);
 
 console.log(typeof boolean3);
 console.log(typeof snacks);
+
+// 이름 : 송윤주
+// 나이 : 33
+// 직업 : 학생
+// 취미 : 게임, 독서, 코딩
+
+let fullName = `${NAME} + "yoonju"`;
+console.log(fullName);
+
+// const nameTemplate = '이름 : ${fullName}'
+// const ageTemplate = '나이 : ${age}'
+// const jobTemplate = '직업 : ${job}'
+// const hobbiesTemplate = '취미 : ${hobbiesString}'
+// const noteTemplate = '특이사항'
