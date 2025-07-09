@@ -1,9 +1,9 @@
 //  사용자입력
-const MAX_SCORE = 100;
+const MAX_SCORE = 100; // 입력할 수 있는 최대 숫자
 let inputStr = prompt("점수를 입력하세요.");
-console.log(inputStr);
+console.log("입력점수", inputStr); // 입력한 숫자 콘솔출력
 
-let input = parseInt(inputStr);
+let input = parseInt(inputStr); //문자열 인자를 정수로 변환하는 역할
 
 var score;
 let grade;
@@ -14,7 +14,7 @@ if (isNaN(input) || input < 0 || input > MAX_SCORE) {
 } else input >= 0 || input <= MAX_SCORE;
 {
   let finalScore = input + 5; // 이항 산술 연산자
-  console.log(finalScore);
+  console.log("최종점수", finalScore);
 }
 
 //등급결정(if) - S: 100 이상
