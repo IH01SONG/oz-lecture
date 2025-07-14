@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>할 일 목록 앱 (나이트 버전)</title>
+    <style>
+      /* --- 나이트 버전 CSS --- */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1e1e1e; /* 어두운 배경색 */
+        color: #d4d4d4; /* 밝은 기본 글꼴색 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .container {
+        background-color: #252525; /* 어두운 컨테이너 배경색 */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* 더 진한 그림자 */
+        padding: 30px 40px;
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #f0f0f0; /* 밝은 제목 글꼴색 */
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        font-weight: 600;
+      }
+
+      #taskCountsContainer {
+        margin-bottom: 25px;
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      #taskCount,
+      #completedTaskCount {
+        font-size: 1.1em;
+        color: #ccc;
+        margin: 5px 0;
+        display: block; /* 각 카운트를 블록 요소로 만들어 줄바꿈 */
+      }
+
+      .input-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+        align-items: center;
+      }
+
+      /* 플레이스홀더 텍스트 색상 */
+      input::placeholder {
+        color: #a0a0a0;
+      }
+      input::-webkit-input-placeholder {
+        color: #a0a0a0;
+      }
+      input::-moz-placeholder {
+        color: #a0a0a0;
+      }
+      input:-ms-input-placeholder {
+        color: #a0a0a0;
+      }
+      input::-ms-input-placeholder {
+        color: #a0a0a0;
+      }
+
+      input[type="text"] {
+        flex-grow: 1;
+        padding: 14px 18px;
+        border: 2px solid #555; /* 어두운 테두리 */
+        border-radius: 8px;
+        font-size: 1.1em;
+        color: #d4d4d4; /* 밝은 입력 텍스트 색상 */
+        background-color: #333; /* 어두운 입력 배경색 */
+        transition: border-color 0.3s ease;
+        min-width: 200px;
+      }
+
+      input[type="text"]:focus {
+        border-color: #5cb85c; /* 포커스 시 녹색 테두리 */
+        outline: none;
+      }
+
+      button {
+        padding: 14px 22px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.05em;
+        font-weight: 600;
+        color: #f0f0f0; /* 밝은 버튼 텍스트 색상 */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        white-space: nowrap;
+      }
+
+      button#addButton {
+        background-color: #5cb85c; /* 녹색 추가 버튼 */
+      }
+
+      button#addButton:hover {
+        background-color: #4cae4c;
+        transform: translateY(-2px);
+      }
+
+      button#clearButton {
+        background-color: #d9534f; /* 빨간색 삭제 버튼 */
+      }
+
+      button#clearButton:hover {
+        background-color: #c9302c;
+        transform: translateY(-2px);
+      }
+
+      ul#taskList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .task-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 15px;
+        border-bottom: 1px solid #444; /* 어두운 구분선 */
+        transition: background-color 0.3s ease;
+      }
+
+      .task-item:last-child {
+        border-bottom: none;
+      }
+
+      .task-item:hover {
+        background-color: #333; /* 호버 시 약간 밝게 */
+      }
+
+      .task-checkbox {
+        margin-right: 15px;
+        transform: scale(1.4);
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #777; /* 어두운 체크박스 테두리 */
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s, border-color 0.2s;
+        background-color: #333; /* 어두운 체크박스 배경 */
+      }
+
+      .task-checkbox:checked {
+        background-color: #5cb85c; /* 녹색 체크 */
+        border-color: #5cb85c;
+      }
+
+      .task-checkbox:checked::after {
+        content: "\2713";
+        color: white;
+        font-size: 14px;
+      }
+
+      .task-text {
+        flex-grow: 1;
+        cursor: pointer;
+        font-size: 1.15em;
+        color: #d4d4d4; /* 밝은 할 일 텍스트 색상 */
+        word-break: break-word;
+        line-height: 1.5;
+        margin-right: 15px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #888; /* 더 어두운 완료 텍스트 */
+        font-style: italic;
+      }
+
+      .delete-button {
+        background-color: #d9534f; /* 빨간색 삭제 버튼 */
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.95em;
+        margin-left: 20px;
+        flex-shrink: 0;
+      }
+
+      .delete-button:hover {
+        background-color: #c9302c;
+        transform: translateY(-1px);
+      }
+
+      /* 미디어 쿼리: 작은 화면 (모바일)을 위한 조정 */
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+          max-width: 95%;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        #taskCountsContainer {
+          padding: 5px;
+        }
+
+        #taskCount,
+        #completedTaskCount {
+          font-size: 1em;
+        }
+
+        .input-section {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        input[type="text"] {
+          width: 100%;
+          min-width: unset;
+        }
+
+        button {
+          width: 100%;
+        }
+
+        .task-item {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 15px 10px;
+        }
+
+        .task-checkbox {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        .task-text {
+          width: 100%;
+          margin-bottom: 10px;
+          font-size: 1em;
+          margin-right: 0;
+        }
+
+        .delete-button {
+          width: 100%;
+          margin-left: 0;
+          padding: 10px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To Do List (Dark Ver.)</h1>
+      <div id="taskCountsContainer">
+        <span id="taskCount">현재 할 일: 0개</span>
+        <span id="completedTaskCount">완료한 할 일: 0개</span>
+      </div>
+      <div class="input-section">
+        <input type="text" id="taskInput" placeholder="새 할 일을 입력하세요" />
+        <button id="addButton">추가</button>
+        <button id="clearButton">전체 삭제</button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+    <script src="night_dom-assignment.js"></script>
+  </body>
+</html>

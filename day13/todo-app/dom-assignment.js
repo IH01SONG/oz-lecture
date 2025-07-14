@@ -1,11 +1,21 @@
 // 과제:
 // HTML 파일에 연결하여 브라우저에서 실행하세요
 
+// 초기 샘플 할 일 제거 (HTML에 있던 "To Do List" 항목)
+// 앱 시작 시 빈 상태로 시작하려면 이 줄을 추가합니다.
+taskList.innerHTML = "";
+
 // DOM 요소 선택
 const taskInput = document.getElementById("taskInput");
 const addButton = document.getElementById("addButton");
 const taskList = document.getElementById("taskList");
 const clearButton = document.getElementById("clearButton");
+
+// 할 일 개수 업데이트 함수
+function updateTaskCount() {
+  const taskItems = taskList.querySelectorAll("li"); // 모든 <li> 요소를 선택
+  taskCountDiv.textContent = `현재 할 일: ${taskItems.length}개`;
+}
 
 // 입력값 검증 및 할 일 추가 함수
 function addTask() {
@@ -26,6 +36,7 @@ function addTask() {
   const span = document.createElement("span");
   span.textContent = taskText;
   span.classList.add("task-text");
+
   span.addEventListener("click", () => {
     span.classList.toggle("completed"); // 완료 상태 토글
   });
