@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+h1 {
+  text-align: center;
+}
+.book-container {
+  margin-top: 20px;
+}
+.book-input {
+  width: calc(50% - 5px); /* 버튼과의 간격을 고려하여 조절 */
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px; /* 입력 필드 아래 여백 추가 */
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+.book-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 5px; /* 버튼들 사이의 간격 */
+  margin-bottom: 10px; /* 버튼 아래 여백 추가 */
+}
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px; /* 모서리를 둥글게 */
+}
+.book-item span {
+  flex-grow: 1;
+  margin-right: 10px; /* 텍스트와 버튼 사이 여백 */
+}
+.book-item button {
+  margin-left: 5px; /* 버튼들 사이의 간격 */
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+.book-item button:first-of-type {
+  /* 삭제 버튼 */
+  background-color: #dc3545;
+  color: white;
+}
+.book-item button:first-of-type:hover {
+  background-color: #c82333;
+}
+.book-item button:last-of-type {
+  /* 대여/반납 버튼 */
+  background-color: #007bff;
+  color: white;
+}
+.book-item button:last-of-type:hover {
+  background-color: #0056b3;
+}
+
+#results {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+#results h3 {
+  margin-top: 0;
+  color: #0056b3;
+}
+#results ul {
+  list-style: disc; /* 점 리스트 스타일 */
+  padding-left: 20px; /* 들여쓰기 */
+}
+#results li {
+  margin: 5px 0;
+}
+#results p {
+  font-weight: bold;
+  color: #28a745;
+}
